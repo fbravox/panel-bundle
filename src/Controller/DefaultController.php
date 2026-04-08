@@ -25,6 +25,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+/**
+ * @author Rogerio Lino <rogeriolino@gmail.com>
+ */
 #[Route('/', name: 'novosga_panel_')]
 class DefaultController extends AbstractController
 {

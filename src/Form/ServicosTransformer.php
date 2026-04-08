@@ -21,6 +21,8 @@ use Novosga\Repository\PainelServicoRepositoryInterface;
 /**
  * Transforms between a Collection<PainelServicoInterface> (entity side)
  * and ServicoUnidadeInterface[] (form side).
+ *
+ * @author Rogerio Lino <rogeriolino@gmail.com>
  */
 class ServicosTransformer
 {

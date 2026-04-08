@@ -15,6 +15,9 @@ namespace Novosga\PanelBundle;
 
 use Novosga\Module\BaseModule;
 
+/**
+ * @author Rogerio Lino <rogeriolino@gmail.com>
+ */
 class NovosgaPanelBundle extends BaseModule
 {
     public function getIconName(): string

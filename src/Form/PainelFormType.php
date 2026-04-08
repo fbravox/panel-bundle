@@ -27,6 +27,9 @@ use Symfony\Component\Validator\Constraints\Count;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
+/**
+ * @author Rogerio Lino <rogeriolino@gmail.com>
+ */
 class PainelFormType extends AbstractType
 {
     public function __construct(
