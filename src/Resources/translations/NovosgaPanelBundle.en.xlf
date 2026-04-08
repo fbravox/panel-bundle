@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="pt-BR" target-language="en" datatype="plaintext" original="messages.pt_BR.xlf">
+    <body>
+      <trans-unit id="module.name">
+        <source>module.name</source>
+        <target>Panel</target>
+      </trans-unit>
+      <trans-unit id="module.description">
+        <source>module.description</source>
+        <target>Customer-facing display of called tickets in service queues</target>
+      </trans-unit>
+      <trans-unit id="title">
+        <source>title</source>
+        <target>Ticket Panel</target>
+      </trans-unit>
+      <trans-unit id="subtitle">
+        <source>subtitle</source>
+        <target>Manage the display panels for this unit</target>
+      </trans-unit>
+      <trans-unit id="label.nome">
+        <source>label.nome</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="label.servicos">
+        <source>label.servicos</source>
+        <target>Services</target>
+      </trans-unit>
+      <trans-unit id="button.open_painel">
+        <source>button.open_painel</source>
+        <target>Open panel</target>
+      </trans-unit>
+      <trans-unit id="button.new_painel">
+        <source>button.new_painel</source>
+        <target>New panel</target>
+      </trans-unit>
+      <trans-unit id="button.save">
+        <source>button.save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="button.back">
+        <source>button.back</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="label.add_success">
+        <source>label.add_success</source>
+        <target>Panel saved successfully!</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

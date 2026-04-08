@@ -1,0 +1,23 @@
+{% extends "@NovosgaPanel/base.html.twig" %}
+
+{% trans_default_domain 'NovosgaPanelBundle' %}
+
+{% block title -%}
+    {{ painel.nome }}
+{%- endblock %}
+
+{% block body %}
+    <div class="painel" data-public-id="{{ painel.publicId }}">
+        <h1>{{ painel.nome }}</h1>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/novosga_panel/css/style.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/novosga_panel/js/script.js') }}"></script>
+{% endblock %}

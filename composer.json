@@ -1,0 +1,42 @@
+{
+    "name": "novosga/panel-bundle",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Novosga\\PanelBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Novosga\\PanelBundle\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.2",
+        "doctrine/orm": "^3.2",
+        "novosga/core": "2.3.x-dev",
+        "symfony/form": "7.4.*",
+        "symfony/framework-bundle": "7.4.*",
+        "symfony/translation": "7.4.*",
+        "symfony/validator": "7.4.*",
+        "symfony/uid": "7.4.*"
+    },
+    "require-dev": {
+        "phpstan/phpdoc-parser": "^2.3.2",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5.55",
+        "slevomat/coding-standard": "^8.28",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.3-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
