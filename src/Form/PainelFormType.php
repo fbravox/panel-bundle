@@ -15,6 +15,7 @@ namespace Novosga\PanelBundle\Form;
 
 use Novosga\Entity\PainelInterface;
 use Novosga\Entity\ServicoUnidadeInterface;
+use Novosga\PanelBundle\NovosgaPanelBundle;
 use Novosga\Repository\ServicoUnidadeRepositoryInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -154,6 +155,7 @@ class PainelFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => PainelInterface::class,
+            'translation_domain' => NovosgaPanelBundle::getDomain(),
         ]);
     }
 }
