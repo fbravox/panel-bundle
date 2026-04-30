@@ -80,6 +80,29 @@ class DefaultController extends AbstractController
         return $this->form($request, $service, $translator, $entity);
     }
 
+    #[Route('/{id}/delete', name: 'delete', methods: ['POST'])]
+    public function delete(
+        Request $request,
+        PainelServiceInterface $service,
+        int $id,
+    ): Response {
+        /** @var UsuarioInterface */
+        $usuario = $this->getUser();
+        $unidade = $usuario->getLotacao()->getUnidade();
+
+        /** @var PainelInterface|null */
+        $entity = $service->getById($id);
+        if (!$entity || $entity->getUnidade()?->getId() !== $unidade->getId()) {
+            throw $this->createNotFoundException();
+        }
+
+        if ($this->isCsrfTokenValid('delete-painel-' . $id, $request->request->get('_token'))) {
+            $service->remove($entity);
+        }
+
+        return $this->redirectToRoute('novosga_panel_index');
+    }
+
     private function form(
         Request $request,
         PainelServiceInterface $service,

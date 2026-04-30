@@ -10,6 +10,14 @@
             </h1>
             <p>{{ 'subtitle'|trans }}</p>
         </div>
+        <div class="ms-auto mt-3">
+            {% if entity.id %}
+                <a href="{{ path('painel_show', { publicId: entity.publicId }) }}" class="btn btn-outline-success ms-2" target="_blank">
+                    <i class="fa fa-tv"></i>
+                    {{ 'button.open_painel'|trans }}
+                </a>
+            {% endif %}
+        </div>
     </div>
 
     {{ form_start(form) }}
@@ -26,18 +34,26 @@
                 {{ 'button.save'|trans }}
             </button>
 
-            {% if entity.id %}
-                <a href="{{ path('painel_show', { publicId: entity.publicId }) }}" class="btn btn-outline-primary ms-2" target="_blank">
-                    <i class="fa fa-tv"></i>
-                    {{ 'button.open_painel'|trans }}
-                </a>
-            {% endif %}
-
             <a href="{{ path('novosga_panel_index') }}" class="btn btn-link text-decoration-none ms-2">
                 <i class="fa fa-chevron-left"></i>
                 {{ 'button.back'|trans }}
             </a>
+
+            {% if entity.id %}
+                <div class="ms-auto">
+                    <button type="submit" form="form-delete" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                        {{ 'button.delete'|trans }}
+                    </button>
+                </div>
+            {% endif %}
         </div>
 
     {{ form_end(form) }}
+
+    {% if entity.id %}
+        <form id="form-delete" method="post" action="{{ path('novosga_panel_delete', { id: entity.id }) }}" onsubmit="return confirm('{{ 'confirm.delete'|trans }}')">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete-painel-' ~ entity.id) }}">
+        </form>
+    {% endif %}
 {% endblock %}

@@ -46,6 +46,14 @@
         <source>label.add_success</source>
         <target>Painel salvo com sucesso!</target>
       </trans-unit>
+      <trans-unit id="button.delete">
+        <source>button.delete</source>
+        <target>Excluir</target>
+      </trans-unit>
+      <trans-unit id="confirm.delete">
+        <source>confirm.delete</source>
+        <target>Deseja realmente excluir este painel?</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

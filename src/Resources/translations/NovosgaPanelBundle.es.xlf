@@ -46,6 +46,14 @@
         <source>label.add_success</source>
         <target>¡Panel guardado con éxito!</target>
       </trans-unit>
+      <trans-unit id="button.delete">
+        <source>button.delete</source>
+        <target>Eliminar</target>
+      </trans-unit>
+      <trans-unit id="confirm.delete">
+        <source>confirm.delete</source>
+        <target>¿Está seguro de que desea eliminar este panel?</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
