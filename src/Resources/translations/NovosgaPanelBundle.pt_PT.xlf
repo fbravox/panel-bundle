@@ -54,6 +54,30 @@
         <source>confirm.delete</source>
         <target>Tem a certeza que deseja eliminar este painel?</target>
       </trans-unit>
+      <trans-unit id="section.aparencia">
+        <source>section.aparencia</source>
+        <target>Aparência</target>
+      </trans-unit>
+      <trans-unit id="label.logo">
+        <source>label.logo</source>
+        <target>Logo (URL)</target>
+      </trans-unit>
+      <trans-unit id="label.cor_fundo_destaque">
+        <source>label.cor_fundo_destaque</source>
+        <target>Cor de fundo - senha em destaque</target>
+      </trans-unit>
+      <trans-unit id="label.cor_fundo_rodape">
+        <source>label.cor_fundo_rodape</source>
+        <target>Cor de fundo - rodapé</target>
+      </trans-unit>
+      <trans-unit id="label.cor_fundo_historico">
+        <source>label.cor_fundo_historico</source>
+        <target>Cor de fundo - histórico de senhas</target>
+      </trans-unit>
+      <trans-unit id="label.cor_fundo_relogio">
+        <source>label.cor_fundo_relogio</source>
+        <target>Cor de fundo - relógio</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

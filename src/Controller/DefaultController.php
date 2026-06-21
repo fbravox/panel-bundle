@@ -19,6 +19,7 @@ use Novosga\Entity\UsuarioInterface;
 use Novosga\PanelBundle\Form\PainelFormType;
 use Novosga\PanelBundle\NovosgaPanelBundle;
 use Novosga\Service\PainelServiceInterface;
+use Novosga\Settings\PainelSettings;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -109,13 +110,26 @@ class DefaultController extends AbstractController
         TranslatorInterface $translator,
         PainelInterface $entity,
     ): Response {
+        $existingSettings = $entity->getId()
+            ? $service->loadSettings($entity)
+            : new PainelSettings();
+
         $form = $this
-            ->createForm(PainelFormType::class, $entity)
+            ->createForm(PainelFormType::class, $entity, ['painel_settings' => $existingSettings])
             ->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $service->save($entity);
+
+                $painelSettings = new PainelSettings(
+                    logo: (string) ($form->get('logo')->getData() ?? ''),
+                    corFundoDestaque: (string) ($form->get('corFundoDestaque')->getData() ?? ''),
+                    corFundoRodape: (string) ($form->get('corFundoRodape')->getData() ?? ''),
+                    corFundoHistorico: (string) ($form->get('corFundoHistorico')->getData() ?? ''),
+                    corFundoRelogio: (string) ($form->get('corFundoRelogio')->getData() ?? ''),
+                );
+                $service->saveSettings($entity, $painelSettings);
 
                 $this->addFlash('success', $translator->trans(
                     'label.add_success',

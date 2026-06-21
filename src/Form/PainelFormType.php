@@ -17,7 +17,9 @@ use Novosga\Entity\PainelInterface;
 use Novosga\Entity\ServicoUnidadeInterface;
 use Novosga\PanelBundle\NovosgaPanelBundle;
 use Novosga\Repository\ServicoUnidadeRepositoryInterface;
+use Novosga\Settings\PainelSettings;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -65,6 +67,44 @@ class PainelFormType extends AbstractType
             'constraints' => [
                 new Count(min: 1),
             ],
+        ]);
+
+        /** @var PainelSettings $settings */
+        $settings = $options['painel_settings'];
+
+        $builder->add('logo', TextType::class, [
+            'label' => 'label.logo',
+            'mapped' => false,
+            'required' => false,
+            'data' => $settings->logo ?: null,
+        ]);
+
+        $builder->add('corFundoDestaque', ColorType::class, [
+            'label' => 'label.cor_fundo_destaque',
+            'mapped' => false,
+            'required' => false,
+            'data' => $settings->corFundoDestaque ?: null,
+        ]);
+
+        $builder->add('corFundoRodape', ColorType::class, [
+            'label' => 'label.cor_fundo_rodape',
+            'mapped' => false,
+            'required' => false,
+            'data' => $settings->corFundoRodape ?: null,
+        ]);
+
+        $builder->add('corFundoHistorico', ColorType::class, [
+            'label' => 'label.cor_fundo_historico',
+            'mapped' => false,
+            'required' => false,
+            'data' => $settings->corFundoHistorico ?: null,
+        ]);
+
+        $builder->add('corFundoRelogio', ColorType::class, [
+            'label' => 'label.cor_fundo_relogio',
+            'mapped' => false,
+            'required' => false,
+            'data' => $settings->corFundoRelogio ?: null,
         ]);
 
         // Populate unit-specific choices and pre-select existing services.
@@ -156,6 +196,9 @@ class PainelFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => PainelInterface::class,
             'translation_domain' => NovosgaPanelBundle::getDomain(),
+            'painel_settings' => new PainelSettings(),
         ]);
+
+        $resolver->setAllowedTypes('painel_settings', PainelSettings::class);
     }
 }
